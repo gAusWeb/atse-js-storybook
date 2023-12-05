@@ -19,7 +19,7 @@ module.exports = merge(common, {
   output: {
     filename: "./js/[name]-js.bundle.js",
     path: path.resolve(__dirname, `./${currentApp}/public/assets/`),
-    clean: true,
+    // clean: true,
   },
   watch: {
     ignored: /node_modules/,

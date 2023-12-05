@@ -1,6 +1,10 @@
 /** @type { import('@storybook/react-webpack5').StorybookConfig } */
 const config = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: [
+    "../src/**/*.mdx",
+    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    // "../public/assets/**/*.@(js|css|svg|png|jpg|jpeg|gif)",
+  ],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
@@ -36,7 +40,7 @@ const config = {
       use: ["@svgr/webpack"],
     });
 
-    console.log(config.module?.rules);
+    // console.log(config.module?.rules);
 
     // const imageRule = config.module?.rules?.find((rule) => {
     //   const test = rule.test.test;

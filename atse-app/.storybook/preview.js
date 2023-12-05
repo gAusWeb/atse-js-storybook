@@ -1,3 +1,7 @@
+import "../public/assets/css/output.css";
+import "../public/assets/css/atse.css";
+import "../public/assets/js/atse-js.bundle.js";
+
 /** @type { import('@storybook/react').Preview } */
 const preview = {
   parameters: {

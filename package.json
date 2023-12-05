@@ -12,20 +12,28 @@
     "json-server": "^0.17.4",
     "mini-css-extract-plugin": "^2.7.6",
     "node-sass": "^9.0.0",
+    "npm-run-all": "^4.1.5",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "postcss-loader": "^7.3.3",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
+    "tailwindcss": "^3.3.5",
     "webpack": "^5.88.1",
     "webpack-cli": "^5.1.4",
     "webpack-merge": "^5.10.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.dev.js",
-    "watch": "webpack --config webpack.dev.js --watch",
-    "build:prod": "webpack --config webpack.prod.js"
+    "initialSetup": "yarn && cd atse-app && yarn",
+    "start": "run-p devWebpackWatch devTwWatch startStorybook",
+    "watch:dev": "run-s devWebpackWatch devTwWatch startStorybook",
+    "build:prod": "webpack --config webpack.prod.js",
+    "startStorybook": "cd atse-app && yarn storybook",
+    "devWebpackWatch": "webpack --config webpack.dev.js --watch",
+    "devTwWatch": "npx tailwindcss -i ./src/css/main.css -o ./atse-app/public/assets/css/atse.css --watch",
+    "twBuildProd": "npx tailwindcss -i ./src/css/main.css -o ./dist/css/atse.min.css --minify",
+    "buildStorybookStatic": "cd atse-app && yarn build-storybook -o ../storybook-static",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "lodash": "^4.17.21"
